@@ -5,9 +5,10 @@ use locale;
 
 open(PLIK, "<" ,"/etc/passwd");
 while(<PLIK>){
+  chomp;
   my($x, $y, $z, $w, $os, $link, $e) = split(/:/);
   if ($link=/\/home\/students.*/){
-    if ($os=/(\w+[^a])\s+.*/){
+    if ($os =~ /(\w{2,}[^a])\s+.*/){
       push @tablica, $1;
     }
   }
