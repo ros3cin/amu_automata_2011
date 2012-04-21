@@ -530,13 +530,12 @@ public class TestDeterministicAutomaton extends TestCase {
         assertFalse(automaton.accepts("aaaaaaaaaaaaaa bbbbbbbb"));
         assertTrue(automaton.accepts("aaaaaabbbbbbbbbbbbbcccccccccccc"));
     }
-    
+
    /**
-   * Test na automacie akceptujacym napisy 
-   * złożone z dowolnej (w tym zerowej) liczby znaków 'a', 
+   * Test na automacie akceptujacym napisy
+   * złożone z dowolnej (w tym zerowej) liczby znaków 'a',
    * po której następuje parzysta (w tym zerowa) liczba znaków 'b'.
    */
-    
     public final void testAutomatonAtwinB() {
 
         DeterministicAutomatonSpecification spec =
