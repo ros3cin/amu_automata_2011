@@ -46,7 +46,7 @@ else:
 
    
 #Parametry
-WZORZEC = "^.*:(\w+[a$])\s(\w+):\/home\/students\/.*$"
+WZORZEC = "^.*:(\w+[a$])\s(\D+):\/home\/students\/.*$"
 WYNIK = []
 
 if PLIK.readline() != '':
