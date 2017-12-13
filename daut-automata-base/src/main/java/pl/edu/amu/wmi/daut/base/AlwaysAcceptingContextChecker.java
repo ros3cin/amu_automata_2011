@@ -8,7 +8,6 @@ public class AlwaysAcceptingContextChecker implements ContextChecker {
     /**
      * Metoda zwraca true.
      */
-    @Override
     public boolean check(TransitionLabel label) {
         return true;
     }

@@ -46,7 +46,6 @@ public final class AutomatonByRecursion implements Acceptor {
         }
     }
 
-    @Override
     public boolean accepts(final String text) {
         accept = false;
         try {

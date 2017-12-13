@@ -18,7 +18,6 @@ public class ReallyCheckingContextChecker implements ContextChecker {
     /**
      * Metoda sprawdzająca kontekst.
      */
-    @Override
     public boolean check(TransitionLabel label) {
         return label.checkContext(s, position);
     }

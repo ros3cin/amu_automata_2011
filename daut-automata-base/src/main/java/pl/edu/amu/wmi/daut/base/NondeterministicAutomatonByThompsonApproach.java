@@ -16,7 +16,6 @@ public class NondeterministicAutomatonByThompsonApproach implements Acceptor {
         automaton = specification;
     }
 
-    @Override
     public boolean accepts(final String text) {
         accept = false;
         int i = 0;

@@ -90,7 +90,6 @@ public class AllAcceptedWords implements Iterator<String> {
     nextWord = null;
   }
 
-  @Override
   /**
   * Do sprawdzenia, czy odwiedzono wszystkie elementy kolekcji stosuje się metodę hasNext()
   */
@@ -98,7 +97,6 @@ public class AllAcceptedWords implements Iterator<String> {
     return nextWord != null;
   }
 
-  @Override
   /**
   * Metoda next() przesuwa iterator i zwraca wartość, na którą wskazuje iterator.
   * Zaraz po utworzeniu iterator wskazuje na specjalną wartość przed pierwszym elementem,
@@ -112,7 +110,6 @@ public class AllAcceptedWords implements Iterator<String> {
     return wordToReturn;
   }
 
-  @Override
   /**
   * Dla kolekcji, które obsługują tę funkcjonalność,
   * ostatnio odwiedzony element można usunąć z kolekcji metodą remove() iteratora.
