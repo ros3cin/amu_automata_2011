@@ -3,6 +3,8 @@ package pl.edu.amu.wmi.daut.base;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.WeakHashMap;
 
 /**
  * Abstrakcyjny opis automatu deterministycznego.
@@ -92,8 +94,8 @@ public abstract class DeterministicAutomatonSpecification
         List<State> prevStates;
         List<OutgoingTransition> prevTransitions;
 
-        HashMap<State, State> getOldStates = new HashMap<State, State>();
-        HashMap<State, State> getStates = new HashMap<State, State>();
+        Map<State, State> getOldStates = new HashMap<State, State>();
+        Map<State, State> getStates = new HashMap<State, State>();
 
         for (State state : states) {
             if (!similarStates.containsKey(state) && !similarStates.containsValue(state)) {

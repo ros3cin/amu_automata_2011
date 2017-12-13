@@ -1,5 +1,6 @@
 package pl.edu.amu.wmi.daut.base;
 import java.lang.reflect.Field;
+import java.text.DecimalFormat;
 public class EnergyCheckUtils {
 	public native static int scale(int freq);
 	public native static int[] freqAvailable();
@@ -45,7 +46,7 @@ public class EnergyCheckUtils {
 		/*One Socket*/
 		if(socketNum == 1) {
 			double[] stats = new double[3];
-			String[] energy = EnergyInfo.split("#");
+			String[] energy = EnergyInfo.replace(',','.').split("#");
 
 			stats[0] = Double.parseDouble(energy[0]);
 			stats[1] = Double.parseDouble(energy[1]);

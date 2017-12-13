@@ -9,12 +9,12 @@ import java.util.ArrayList;
  * Testy różnych operacji na automatach.
  */
 public class TestAutomataOperations extends TestCase {
-
+	
     /**
      * Test prostego automatu.
      */
     public final void testSimpleAutomaton() {
-
+    	
         AutomatonSpecification automatonA = new NaiveAutomatonSpecification();
 
         State q0 = automatonA.addState();

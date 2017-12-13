@@ -1,6 +1,7 @@
 package pl.edu.amu.wmi.daut.base;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**

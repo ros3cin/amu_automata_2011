@@ -8,6 +8,29 @@ import java.util.List;
  */
 public class TestNotNaiveAutomatonSpecification extends TestCase {
 
+	
+	public final void testStressing() {
+		EnergyCheckUtils.ProfileInit();
+		for(int z= 0; z < 10; z++) {
+			double[] before = null;
+			boolean initialized=false;
+			for(int i = 0; i < 10000000; i++) {
+				if(!initialized) {
+					if(i>10) {
+						initialized=true;
+						before = EnergyCheckUtils.getEnergyStats();
+					}
+				}
+				testMakeFullAlmostFull();
+				testSimpleAutomaton();
+				testUnmark();
+			}
+			double[] after = EnergyCheckUtils.getEnergyStats();
+			System.out.println(after[2]-before[2]);
+		}
+    	EnergyCheckUtils.ProfileDealloc();
+	}
+	
     /**
      * Tworzymy prosty 3 stanowy automat.
      * Testujemy na nim wszystkie polecenia podobnie

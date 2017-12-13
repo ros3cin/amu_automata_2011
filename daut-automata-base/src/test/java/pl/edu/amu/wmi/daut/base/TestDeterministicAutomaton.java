@@ -8,6 +8,38 @@ import junit.framework.TestCase;
  */
 public class TestDeterministicAutomaton extends TestCase {
 
+	/**
+	 * Changing DeterministicAutomatonSpecification.buildMinial
+	 * - getOldStates - HashMap (original) to WeakHashMap
+	 * - getStates - HashMap (original) to WeakHashMap
+	 * It seems there is an improvement
+	 */
+	public final void testStressing() {
+		EnergyCheckUtils.ProfileInit();
+		for(int z= 0; z < 10; z++) {
+			double[] before = null;
+			boolean initialized=false;
+			for(int i = 0; i < 10000; i++) {
+				if(!initialized) {
+					if(i>10) {
+						initialized=true;
+						before = EnergyCheckUtils.getEnergyStats();
+					}
+				}
+				testMakeMinimal1();
+				testMakeMinimal2();
+				testMakeMinimal3();
+				testMakeMinimal5();
+				testMakeMinimalOnDiamond();
+				testMakeMinimalOnSimple();
+				testUnmark();
+			}
+			double[] after = EnergyCheckUtils.getEnergyStats();
+			System.out.println(after[2]-before[2]);
+		}
+    	EnergyCheckUtils.ProfileDealloc();
+	}
+	
     /**
      * prosty test automatu deterministycznego.
      */
